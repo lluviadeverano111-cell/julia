@@ -835,3 +835,135 @@ export const SONG_CONDITIONALS_EXERCISES: SongConditionalItem[] = [
   },
 ];
 
+export interface SpeakingQuestionItem {
+  id: number;
+  category: "Будущее" | "Привычки" | "Прошлое" | "Закончи фразу" | "Опыт и мнение";
+  promptEs: string;
+  starterEs: string;
+  targetWords: string[];
+}
+
+export const SPEAKING_QUESTIONS_15: SpeakingQuestionItem[] = [
+  {
+    id: 1,
+    category: "Будущее",
+    promptEs:
+      "Si este fin de semana hace frío y tienes que ponerte el abrigo, ¿te quedarás en casa o saldrás a estrenar algún lugar nuevo?",
+    starterEs: "Si este fin de semana hace frío, ...",
+    targetWords: ["ponerse el abrigo", "quedarse en casa", "estrenar"],
+  },
+  {
+    id: 2,
+    category: "Привычки",
+    promptEs:
+      "Si ves que vas a llegar tarde y puedes perder el autobús o el tren, ¿te das prisa y corres o prefieres esperar tranquilo el siguiente?",
+    starterEs: "Si veo que voy a llegar tarde, normalmente ...",
+    targetWords: ["llegar tarde", "perder el autobús / el tren", "darse prisa"],
+  },
+  {
+    id: 3,
+    category: "Прошлое",
+    promptEs:
+      "Cuando eras niño, si tenías mucho sueño por la mañana, ¿te costaba dejar la almohada o te levantabas rápido?",
+    starterEs: "Cuando era niño, si tenía mucho sueño, ...",
+    targetWords: ["tener sueño", "la almohada"],
+  },
+  {
+    id: 4,
+    category: "Закончи фразу",
+    promptEs:
+      "Completa la frase con tu experiencia: «Si quiero aprobar un examen difícil, tengo que memorizar…, pero nunca…»",
+    starterEs: "Si quiero aprobar un examen difícil, tengo que memorizar ..., pero nunca ...",
+    targetWords: ["aprobar el examen", "memorizar"],
+  },
+  {
+    id: 5,
+    category: "Будущее",
+    promptEs:
+      "Si estrenan una película muy esperada o abre un café nuevo, ¿te importa hacer cola durante media hora o te vas a otro sitio?",
+    starterEs: "Si estrenan una película o abre un café nuevo, no me importa / prefiero ...",
+    targetWords: ["estrenar", "importar", "hacer cola"],
+  },
+  {
+    id: 6,
+    category: "Прошлое",
+    promptEs:
+      "Si alguna vez prestaste dinero a alguien y esa persona no te devolvió el dinero (ni siquiera unos centavos), ¿qué hiciste? ¿Volverías a confiar?",
+    starterEs: "Si alguien no me ha devuelto el dinero, ...",
+    targetWords: ["devolver el dinero", "los centavos"],
+  },
+  {
+    id: 7,
+    category: "Закончи фразу",
+    promptEs:
+      "Completa la frase: «Si regreso a casa muy tarde y alguien me ha guardado un plato caliente, yo…»",
+    starterEs: "Si regreso a casa muy tarde y alguien me ha guardado un plato caliente, yo ...",
+    targetWords: ["regresar", "llegar tarde", "guardar un plato"],
+  },
+  {
+    id: 8,
+    category: "Опыт и мнение",
+    promptEs:
+      "Si viajas a una ciudad nueva, ¿te guía la curiosidad traviesa de explorar todos sus recovecos sin mapa o prefieres llevar una ruta exacta?",
+    starterEs: "Si viajo a una ciudad nueva, ...",
+    targetWords: ["la curiosidad", "traviesa", "los recovecos"],
+  },
+  {
+    id: 9,
+    category: "Прошлое",
+    promptEs:
+      "Antes, si tu familia regresaba cada verano al mismo lugar de vacaciones, ¿qué detalles memorizabas y recuerdas todavía hoy?",
+    starterEs: "Antes, si regresábamos al mismo lugar, siempre ...",
+    targetWords: ["regresar", "el mismo lugar", "memorizar"],
+  },
+  {
+    id: 10,
+    category: "Закончи фразу",
+    promptEs:
+      "Completa la frase pensando en la vida real: «Al principio toda escoba nueva barre bien, pero si el tiempo desgasta las cerdas de un proyecto o una rutina, yo…»",
+    starterEs: "Si el tiempo desgasta las cerdas de un proyecto o una rutina, yo ...",
+    targetWords: ["la escoba", "barrer", "desgastar", "las cerdas"],
+  },
+  {
+    id: 11,
+    category: "Опыт и мнение",
+    promptEs:
+      "Si una mala noticia te hace trizas el ánimo, ¿prefieres hablarlo con un amigo o llorar un rato en la almohada y seguir adelante sin implorar ayuda?",
+    starterEs: "Si una mala noticia me hace trizas el ánimo, ...",
+    targetWords: ["hacer trizas", "la almohada", "implorar"],
+  },
+  {
+    id: 12,
+    category: "Будущее",
+    promptEs:
+      "Si mañana el tráfico es un verdadero infierno y ves que no vas a llegar a tiempo, ¿cómo avisas y qué haces para no perder la calma?",
+    starterEs: "Si mañana el tráfico es un infierno y no llego a tiempo, ...",
+    targetWords: ["el infierno", "llegar a tiempo"],
+  },
+  {
+    id: 13,
+    category: "Закончи фразу",
+    promptEs:
+      "Completa la frase: «Si algún día la arruga empieza a cortar mi piel y la rutina invade mi casa, no me importa mientras…»",
+    starterEs: "Si algún día la arruga empieza a cortar mi piel y la rutina invade mi casa, no me importa mientras ...",
+    targetWords: ["la arruga", "cortar", "invadir", "importar"],
+  },
+  {
+    id: 14,
+    category: "Опыт и мнение",
+    promptEs:
+      "¿A quién llamarías en broma «pedazo de artista» o «una bruja»? Si una persona difícil intenta quitarte la paz, ¿qué le dices?",
+    starterEs: "Si una persona difícil intenta quitarme la paz, ...",
+    targetWords: ["pedazo de", "la bruja", "quitar"],
+  },
+  {
+    id: 15,
+    category: "Прошлое",
+    promptEs:
+      "Si alguna vez te equivocaste y tuviste que regresar «con el rabo entre los cuernos» para pedir perdón, ¿fue difícil? Y si alguien vuelve así contigo, ¿todo vuelve al mismo lugar?",
+    starterEs: "Si alguna vez me equivoqué y tuve que regresar a pedir perdón, ...",
+    targetWords: ["regresar", "el rabo", "los cuernos", "el mismo lugar"],
+  },
+];
+
+

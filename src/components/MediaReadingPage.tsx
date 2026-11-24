@@ -10,6 +10,8 @@ import {
   Sparkles,
   MessageSquareQuote,
   GitBranch,
+  MessageCircle,
+  CheckCircle2,
 } from 'lucide-react';
 import {
   SHAKIRA_SONG,
@@ -18,6 +20,7 @@ import {
   SONG_IDIOMS_QUIZ,
   SONG_VOCAB_CLOZE,
   SONG_CONDITIONALS_EXERCISES,
+  SPEAKING_QUESTIONS_15,
   PERU_HERO,
   PERU_PARAGRAPHS,
   PERU_WORD_DICTIONARY,
@@ -103,6 +106,17 @@ export const MediaReadingPage: React.FC = () => {
   const currentIdiom = SONG_IDIOMS_QUIZ[idiomStep];
   const currentVocab = SONG_VOCAB_CLOZE[vocabStep];
   const currentCond = SONG_CONDITIONALS_EXERCISES[condStep];
+
+  // 15 speaking questions state
+  const [speakingStep, setSpeakingStep] = useState<number>(0);
+  const [discussedIds, setDiscussedIds] = useState<Record<number, boolean>>({});
+  const [showStarter, setShowStarter] = useState<boolean>(false);
+
+  const speakingStatuses: StepStatus[] = SPEAKING_QUESTIONS_15.map((q) =>
+    discussedIds[q.id] ? 'correct' : 'unanswered'
+  );
+  const currentSpeaking = SPEAKING_QUESTIONS_15[speakingStep];
+  const discussedCount = Object.values(discussedIds).filter(Boolean).length;
 
   useEffect(() => {
     return () => {
@@ -492,7 +506,7 @@ export const MediaReadingPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-display text-lg sm:text-xl font-bold text-[#241338]">
-                  Упражнение 1 · Фразеологизмы из песни
+                  1. Фразеологизмы из песни
                 </h4>
                 <p className="text-xs text-purple-900/70">
                   Выбери точное значение устойчивого выражения из «Si te vas»
@@ -595,7 +609,7 @@ export const MediaReadingPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-display text-lg sm:text-xl font-bold text-[#241338]">
-                  Упражнение 2 · Новые слова из песни в контексте
+                  2. Новые слова из песни в контексте
                 </h4>
                 <p className="text-xs text-purple-900/70">
                   Вставь подходящее слово из лексики песни по смыслу
@@ -734,7 +748,7 @@ export const MediaReadingPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-display text-lg sm:text-xl font-bold text-[#241338]">
-                  Упражнение 3 · Условные предложения из песни
+                  3. Условные предложения из песни
                 </h4>
                 <p className="text-xs text-purple-900/70">
                   Выбери правильную форму глагола в условных конструкциях (si + indicativo)
@@ -846,6 +860,113 @@ export const MediaReadingPage: React.FC = () => {
               </div>
             );
           })()}
+        </div>
+      </section>
+
+      {/* SECTION 1.8: 15 CONVERSATION QUESTIONS (B1 SPEAKING PRACTICE) */}
+      <section className="space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-purple-700 text-white flex items-center justify-center shrink-0">
+              <MessageCircle className="w-4 h-4" aria-hidden="true" />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-bold text-[#241338]">
+                Поговорим! 15 вопросов на обсуждение
+              </h3>
+              <p className="text-xs text-purple-900/70">
+                Отвечай развёрнуто, используя условные предложения (si + indicativo) и лексику урока
+              </p>
+            </div>
+          </div>
+
+          <span className="text-xs font-mono-code font-bold text-purple-900 bg-purple-100/80 border border-purple-200 px-3 py-1.5 rounded-xl tabular-nums self-start sm:self-center">
+            Обсудили: {discussedCount} / {SPEAKING_QUESTIONS_15.length}
+          </span>
+        </div>
+
+        <div className="bg-white border border-purple-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-1 rounded-lg bg-pink-50 border border-pink-200 text-pink-800 text-xs font-bold">
+                {currentSpeaking.category}
+              </span>
+              <span className="text-xs font-mono-code font-bold text-purple-800/70">
+                Вопрос {currentSpeaking.id} из {SPEAKING_QUESTIONS_15.length}
+              </span>
+            </div>
+
+            <AudioPlayButton text={currentSpeaking.promptEs} variant="compact" />
+          </div>
+
+          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-purple-50/80 via-pink-50/45 to-yellow-50/55 border border-purple-200/80 space-y-4">
+            <p className="font-display text-xl sm:text-2xl font-bold text-[#241338] leading-snug">
+              {currentSpeaking.promptEs}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-[11px] font-bold uppercase tracking-wide text-purple-800/65 mr-1">
+                Слова урока:
+              </span>
+              {currentSpeaking.targetWords.map((word) => (
+                <span
+                  key={word}
+                  className="px-2.5 py-1 rounded-lg bg-white/90 border border-purple-200 text-xs font-semibold text-purple-950"
+                >
+                  {word}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={() => setShowStarter((v) => !v)}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-purple-200 bg-purple-50/60 text-xs font-bold text-purple-900 hover:border-pink-400 hover:bg-pink-50/50 transition-colors cursor-pointer"
+            >
+              <Eye className="w-3.5 h-3.5" />
+              <span>{showStarter ? 'Скрыть начало ответа' : 'Показать начало ответа'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                setDiscussedIds((prev) => ({
+                  ...prev,
+                  [currentSpeaking.id]: !prev[currentSpeaking.id],
+                }))
+              }
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border text-xs font-bold transition-colors cursor-pointer ${
+                discussedIds[currentSpeaking.id]
+                  ? 'bg-emerald-50 border-emerald-400 text-emerald-950'
+                  : 'bg-white border-purple-200 text-purple-900 hover:border-emerald-400 hover:bg-emerald-50/40'
+              }`}
+            >
+              <CheckCircle2 className="w-4 h-4" />
+              <span>
+                {discussedIds[currentSpeaking.id]
+                  ? 'Обсудили'
+                  : 'Отметить как обсуждённый'}
+              </span>
+            </button>
+          </div>
+
+          {showStarter && (
+            <div className="p-3.5 rounded-xl bg-yellow-50/85 border border-yellow-300 text-sm font-semibold text-purple-950">
+              {currentSpeaking.starterEs}
+            </div>
+          )}
+
+          <ExerciseStepper
+            currentIndex={speakingStep}
+            total={SPEAKING_QUESTIONS_15.length}
+            onChange={(nextIdx) => {
+              setSpeakingStep(nextIdx);
+              setShowStarter(false);
+            }}
+            statuses={speakingStatuses}
+          />
         </div>
       </section>
 

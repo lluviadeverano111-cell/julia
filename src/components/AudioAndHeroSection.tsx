@@ -70,7 +70,7 @@ export const AudioAndHeroSection: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 1. Послушай и выбери, какая фраза прозвучала
+              1. Послушай и выбери, какая фраза прозвучала
             </h2>
             <p className="text-sm text-purple-900/70">
               Варианты очень похожи и отличаются только временами из таблицы — послушай запись (есть
@@ -168,7 +168,7 @@ export const AudioAndHeroSection: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 2. Кто о чём говорит?
+              2. Кто о чём говорит?
             </h2>
             <p className="text-sm text-purple-900/70">
               Прочитай или послушай реплику героя и подбери тип условной ситуации
@@ -242,7 +242,7 @@ export const AudioAndHeroSection: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 3. Услышь предложение и выбери картинку
+              3. Услышь предложение и выбери картинку
             </h2>
             <p className="text-sm text-purple-900/70">
               Послушай условное предложение на испанском и нажми на картинку, которая подходит по
@@ -341,7 +341,7 @@ export const AudioAndHeroSection: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 4. ¿Quién lo dijo?
+              4. ¿Quién lo dijo?
             </h2>
             <p className="text-sm text-purple-900/70">
               Перелистывай аудиореплики и выбирай, кто из персонажей их произнёс

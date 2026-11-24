@@ -295,7 +295,7 @@ export const ExercisesPage: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 5. Выбери правильную форму глагола
+              5. Выбери правильную форму глагола
             </h2>
             <p className="text-sm text-purple-900/70">
               Обращай внимание на время, маркеры и разницу между условием и косвенным вопросом
@@ -362,7 +362,7 @@ export const ExercisesPage: React.FC = () => {
             <Image className="w-4 h-4" aria-hidden="true" />
           </div>
           <h2 className="font-display text-2xl font-bold text-[#241338]">
-            Задание 6. Выбери грамматически правильную подпись на испанском
+            6. Выбери грамматически правильную подпись на испанском
           </h2>
         </div>
 
@@ -441,7 +441,7 @@ export const ExercisesPage: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 7. Поставь глаголы в нужную форму
+              7. Поставь глаголы в нужную форму
             </h2>
             <p className="text-sm text-purple-900/70">
               Для будущего следствия принимаются и futuro simple, и конструкция ir a + infinitivo
@@ -531,7 +531,7 @@ export const ExercisesPage: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 8. Найди ошибку (или проверь, есть ли она)
+              8. Найди ошибку (или проверь, есть ли она)
             </h2>
             <p className="text-sm text-purple-900/70">
               Нажми на ошибочное слово в испанской фразе, на неверный русский перевод или на кнопку
@@ -652,7 +652,7 @@ export const ExercisesPage: React.FC = () => {
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold text-[#241338]">
-              Задание 9. Переведи на испанский
+              9. Переведи на испанский
             </h2>
             <p className="text-sm text-purple-900/70">
               Переведи предложения самостоятельно (принимаются и futuro simple, и ir a + infinitivo)
@@ -757,7 +757,7 @@ export const ExercisesPage: React.FC = () => {
             </div>
             <div>
               <h2 className="font-display text-2xl font-bold text-[#241338]">
-                Задание 10. Тексты
+                10. Тексты
               </h2>
               <p className="text-sm text-purple-900/70">
                 Нажимайте на любое слово в тексте, чтобы увидеть перевод и инфинитив глагола
